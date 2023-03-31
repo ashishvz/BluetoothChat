@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSize12">12sp</dimen>
+    <dimen name="textSize14">14sp</dimen>
+    <dimen name="textSize16">16sp</dimen>
+    <dimen name="textSize18">18sp</dimen>
+    <dimen name="textSize20">20sp</dimen>
+    <dimen name="textSize22">22sp</dimen>
+    <dimen name="textSize24">24sp</dimen>
+    <dimen name="textSize26">26sp</dimen>
+    <dimen name="textSize28">28sp</dimen>
+    <dimen name="textSize30">30sp</dimen>
+
+    <dimen name="margin5dp">5dp</dimen>
+    <dimen name="margin10dp">10dp</dimen>
+    <dimen name="margin12dp">12dp</dimen>
+    <dimen name="margin14dp">14dp</dimen>
+    <dimen name="margin16dp">16dp</dimen>
+    <dimen name="margin20dp">20dp</dimen>
+
+    <dimen name="padding1dp">1dp</dimen>
+    <dimen name="padding5dp">5dp</dimen>
+    <dimen name="padding10dp">10dp</dimen>
+    <dimen name="padding12dp">12dp</dimen>
+    <dimen name="padding14dp">14dp</dimen>
+    <dimen name="padding16dp">16dp</dimen>
+
+    <dimen name="height50dp">50dp</dimen>
+    <dimen name="height60dp">60dp</dimen>
+    <dimen name="height70dp">70dp</dimen>
+    <dimen name="height80dp">80dp</dimen>
+    <dimen name="height90dp">90dp</dimen>
+    <dimen name="height100dp">100dp</dimen>
+    <dimen name="height300dp">300dp</dimen>
+
+    <dimen name="width40dp">40dp</dimen>
+    <dimen name="width60dp">60dp</dimen>
+    <dimen name="width70dp">70dp</dimen>
+    <dimen name="width80dp">80dp</dimen>
+    <dimen name="width90dp">90dp</dimen>
+    <dimen name="width100dp">100dp</dimen>
+    <dimen name="width180dp">180dp</dimen>
+    <dimen name="width200dp">200dp</dimen>
+
+    <dimen name="radius4dp">4dp</dimen>
+    <dimen name="radius6dp">6dp</dimen>
+    <dimen name="radius8dp">8dp</dimen>
+    <dimen name="radius10dp">10dp</dimen>
+
+    <dimen name="elevation0dp">0dp</dimen>
+    <dimen name="elevation8dp">8dp</dimen>
+    <dimen name="width30dp">30dp</dimen>
+    <dimen name="padding8dp">8dp</dimen>
+</resources>

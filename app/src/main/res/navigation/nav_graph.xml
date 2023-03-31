@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pairedDevicesFragment">
+    <fragment
+        android:id="@+id/pairedDevicesFragment"
+        android:name="com.ashishvz.bluetoothtest.ui.fragments.PairedDevicesFragment"
+        android:label="PairedDevicesFragment"
+        tools:layout="@layout/fragment_paired_devices">
+        <action
+            android:id="@+id/action_pairedDevicesFragment_to_chatFragment"
+            app:destination="@id/chatFragment"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.ashishvz.bluetoothtest.ui.fragments.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat" >
+        <argument
+            android:name="data"
+            app:argType="com.ashishvz.bluetoothtest.data.model.BluetoothDevice" />
+
+    </fragment>
+</navigation>

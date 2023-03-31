@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/contentLoadingBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin20dp"
+            android:layout_marginEnd="@dimen/margin20dp"
+            android:elevation="@dimen/elevation8dp"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:indeterminateTint="@color/bt_blue"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height60dp"
+            android:background="@color/bt_blue"
+            app:layout_constraintBottom_toTopOf="@id/isConnectedText"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/deviceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize20"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="@dimen/height50dp"
+                android:layout_height="@dimen/height50dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin10dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/padding10dp"
+                android:src="@drawable/round_arrow_back_24" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/isConnectedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding16dp"
+            android:paddingStart="@dimen/padding10dp"
+            android:paddingEnd="@dimen/padding10dp"
+            android:textColor="@color/text_back"
+            android:textSize="@dimen/textSize16"
+            app:layout_constraintTop_toBottomOf="@id/header" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin10dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:layout_marginEnd="@dimen/margin10dp"
+            android:layout_marginBottom="@dimen/margin5dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@id/messageCard"
+            app:layout_constraintTop_toBottomOf="@id/isConnectedText">
+
+            <ListView
+                android:id="@+id/chatListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:stackFromBottom="true"
+                android:transcriptMode="alwaysScroll" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/messageCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin10dp"
+            android:layout_marginEnd="@dimen/margin10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="@dimen/elevation0dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/padding1dp"
+                android:paddingEnd="@dimen/padding5dp"
+                android:weightSum="2">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height60dp"
+                    android:layout_marginEnd="@dimen/margin5dp"
+                    android:layout_weight="2"
+                    app:boxBackgroundMode="none"
+                    app:boxCornerRadiusBottomEnd="25dp"
+                    app:boxCornerRadiusBottomStart="25dp"
+                    app:boxCornerRadiusTopEnd="25dp"
+                    app:boxCornerRadiusTopStart="25dp"
+                    app:boxStrokeWidth="@dimen/elevation0dp"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/messageTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/enter_message_here"
+                        android:paddingTop="@dimen/padding10dp"
+                        android:textSize="@dimen/textSize16" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sendButton"
+                    android:layout_width="@dimen/width60dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/bt_blue"
+                    app:cornerRadius="@dimen/radius8dp"
+                    app:icon="@drawable/round_send_50"
+                    app:iconTint="@color/white"
+                    app:iconSize="@dimen/width30dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

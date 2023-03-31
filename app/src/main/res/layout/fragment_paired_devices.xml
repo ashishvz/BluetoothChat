@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        tools:context=".ui.MainActivity">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height60dp"
+            android:background="@color/bt_blue"
+            app:layout_constraintBottom_toTopOf="@id/headingText"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/bluetooth_serial"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize20"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/bluetoothSearchImage"
+                android:layout_width="@dimen/height50dp"
+                android:layout_height="@dimen/height50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin10dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/padding10dp"
+                android:src="@drawable/round_bluetooth_searching_24" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/headingText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding10dp"
+            android:text="@string/bluetooth_message"
+            android:textColor="@color/text_back"
+            android:textSize="@dimen/textSize26"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/searchLayout"
+            app:layout_constraintTop_toTopOf="@id/header" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height60dp"
+            android:layout_marginStart="@dimen/margin20dp"
+            android:layout_marginEnd="@dimen/margin10dp"
+            app:cardCornerRadius="@dimen/margin20dp"
+            app:layout_constraintTop_toBottomOf="@id/headingText"
+            app:strokeColor="@color/text_back"
+            app:strokeWidth="@dimen/padding1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="@dimen/width30dp"
+                    android:layout_height="@dimen/width30dp"
+                    android:layout_marginStart="@dimen/margin10dp"
+                    android:src="@drawable/icon_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height60dp"
+                    android:layout_margin="@dimen/margin10dp"
+                    app:boxBackgroundMode="none"
+                    app:boxStrokeColor="#00ff0000"
+                    app:boxStrokeWidth="@dimen/elevation0dp"
+                    app:hintEnabled="false"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/searchIcon"
+                    app:layout_constraintRight_toLeftOf="@id/clearIcon"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/searchTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/search_bluetooth_device"
+                        android:maxLength="15"
+                        android:maxLines="1"
+                        android:paddingTop="@dimen/padding8dp"
+                        android:textSize="@dimen/textSize16" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/clearIcon"
+                    android:layout_width="@dimen/width30dp"
+                    android:layout_height="@dimen/width30dp"
+                    android:layout_marginStart="@dimen/margin10dp"
+                    android:layout_marginEnd="@dimen/margin10dp"
+                    android:src="@drawable/icon_close"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pairedDeviceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin10dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:gravity="start"
+            android:padding="@dimen/padding10dp"
+            android:text="@string/available_paired_devices"
+            android:textColor="@color/text_back"
+            android:textSize="@dimen/textSize16"
+            app:layout_constraintBottom_toTopOf="@id/deviceRecyclerView"
+            app:layout_constraintTop_toBottomOf="@id/searchLayout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/deviceRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin10dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:layout_marginEnd="@dimen/margin10dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pairedDeviceText" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/contentLoadingBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin10dp"
+            android:layout_marginEnd="@dimen/margin10dp"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:indeterminateTint="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

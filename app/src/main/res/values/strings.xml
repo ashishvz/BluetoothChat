@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Bluetooth Serial</string>
+    <string name="paired_devices">Paired Devices</string>
+    <string name="bluetooth_message">Select bluetooth device you would like to send message</string>
+    <string name="chat">Chat</string>
+    <string name="enter_message_here">Enter message here..</string>
+    <string name="yes"><b>Yes</b></string>
+    <string name="no"><b>No</b></string>
+    <string name="search_bluetooth_device">Search Bluetooth Device</string>
+    <string name="bluetooth_serial">Bluetooth Serial</string>
+    <string name="available_paired_devices">Available Paired Devices</string>
+</resources>
